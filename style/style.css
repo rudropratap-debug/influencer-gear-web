@@ -2,6 +2,9 @@
 *{
     margin: 0px;
 }
+.hide{
+    display:none;
+}
 .poppins-regular {
     font-family: "Poppins", serif;
     font-weight: 400;
@@ -17,13 +20,13 @@
     margin: 85px auto;
 }
 .btn-primary{
+    width: 190px;
     background-color: #E02C6D;
     padding: 10px 24px;
     border-radius: 8px;
     color: white;
     border:none;
     font-weight: 700px;
-
 }
 /* header style */
 .header{
@@ -48,23 +51,31 @@
 .banner{
     justify-content: space-between;
 }
+.banner-content{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
 .banner-heading{
     font-size: 3.25rem;
     font-weight: 700px;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
 }
 .banner-description{
     font-weight: 600;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 .banner-img-container{
     background-image: url('../images/Circle\ design.svg');
     background-position: center;
+    max-width: 100%;
 }
 /* banner style end */
 
 /* sponsor section style*/
 .sponsor{
+    
     margin-top:170px;
     display: grid;
     grid-template-columns: repeat(7,1fr);
@@ -138,6 +149,9 @@
     margin-top: 16px;
     margin-bottom: 16px;
 }
+.featured-img{
+    max-width: 100%;
+}
 .btn-second{
     border-radius: 0px;
 }
@@ -145,13 +159,16 @@
 
 /* footer section style */
 .footer{
-    hieght:330px;
     padding:50px 590px;
     background-color: #0a0826;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    max-width: 100%;
+    
 }
 .footer-title{
     font-size: 1.5rem;
@@ -168,4 +185,46 @@
 .icons{
     margin-top: 30px;
     gap:15px;
+}
+
+
+/* responsive media query for small devices */
+@media screen and (max-width:576px){
+    .header, .header ul ,.banner, .featured{
+        flex-direction: column;
+        align-items: center;
+        gap:30px;
+    }
+    .banner{
+    flex-direction: column-reverse;
+    text-align: center;
+    }
+    .banner-content{
+        align-items: center;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .sponsor{
+        grid-template-columns: repeat(4,1fr);
+        margin-left: 20px;
+        margin-right: 20px;
+        gap:5px;
+    }
+    .collection{
+        text-align: center;
+    }
+    .collection-cards{
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 40px;
+        gap:20px;
+    }
+    .featured{
+        flex-direction: column-reverse;
+        padding: 30px;
+        text-align: center;
+    }
+    .footer{
+        padding: 100px;
+        margin-left: 10px;
+    }
 }
